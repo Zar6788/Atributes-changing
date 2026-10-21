@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Text Stylizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Interactive Text Stylizer</h1>
+        
+        <!-- Dark and Light Mode Toggle -->
+        <button id="modeToggleBtn" class="control-btn">Toggle Dark/Light Mode</button>
+
+        <!-- Text Area -->
+        <div class="editor-section">
+            <textarea id="textInput" placeholder="Type or paste your text here...">Change my style using the controls below!</textarea>
+        </div>
+
+        <!-- Controls Panel -->
+        <div class="controls-panel">
+            <!-- Text Color -->
+            <div class="control-group">
+                <label>Text Color:</label>
+                <input type="color" id="textColorPicker" value="#333333">
+            </div>
+
+            <!-- Background Color -->
+            <div class="control-group">
+                <label>Background Color:</label>
+                <input type="color" id="bgColorPicker" value="#ffffff">
+            </div>
+
+            <!-- Font Family -->
+            <div class="control-group">
+                <label>Font Family:</label>
+                <select id="fontFamilySelect">
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value="'Courier New', monospace">Courier New</option>
+                    <option value="'Times New Roman', serif">Times New Roman</option>
+                </select>
+            </div>
+
+            <!-- Font Size -->
+            <div class="control-group">
+                <label>Font Size:</label>
+                <button class="action-btn" onclick="changeFontSize('decrease')">A-</button>
+                <button class="action-btn" onclick="changeFontSize('increase')">A+</button>
+            </div>
+
+            <!-- Bold and Italic -->
+            <div class="control-group">
+                <label>Style:</label>
+                <button class="action-btn" onclick="toggleStyle('bold')">Bold</button>
+                <button class="action-btn" onclick="toggleStyle('italic')">Italic</button>
+            </div>
+
+            <!-- Text Decoration -->
+            <div class="control-group">
+                <label>Decoration:</label>
+                <button class="action-btn" onclick="setDecoration('underline')">Underline</button>
+                <button class="action-btn" onclick="setDecoration('overline')">Overline</button>
+                <button class="action-btn" onclick="setDecoration('line-through')">Line-through</button>
+                <button class="action-btn" onclick="setDecoration('none')">Clear</button>
+            </div>
+
+            <!-- Text Alignment -->
+            <div class="control-group">
+                <label>Alignment:</label>
+                <button class="action-btn" onclick="setAlignment('left')">Left</button>
+                <button class="action-btn" onclick="setAlignment('center')">Center</button>
+                <button class="action-btn" onclick="setAlignment('right')">Right</button>
+            </div>
+
+            <!-- Uppercase and Lowercase -->
+            <div class="control-group">
+                <label>Case:</label>
+                <button class="action-btn" onclick="setCase('uppercase')">UPPER</button>
+                <button class="action-btn" onclick="setCase('lowercase')">lower</button>
+            </div>
+
+            <!-- Reset Button -->
+            <div class="control-group full-width">
+                <button class="reset-btn" onclick="resetStyles()">Reset All Styles</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
